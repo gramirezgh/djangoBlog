@@ -1,6 +1,8 @@
 
 git add .
 
+git status
+
 git commit -m "primer commit"
 
 git push -u origin master
