@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista post</title>
+    <h3>Lista Post</h3>
+</head>
+<body>
+
+    {%for object in object_list %}
+    <a href="/{{ object.id }}/{{ object.slug }}/"><h1>{{object.titulo}}</h1></a>
+        <h3>{{object.fecha}}</h3>
+        <p>{{object.contenido}}</p>
+    {%endfor%}
+
+</body>
+</html>
