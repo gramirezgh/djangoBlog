@@ -1,17 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Lista post</title>
-    <h3>Lista Post</h3>
-</head>
-<body>
+{% extends "base.html" %}
 
+{% block content %}
     {%for object in object_list %}
     <a href="/{{ object.id }}/{{ object.slug }}/"><h1>{{object.titulo}}</h1></a>
         <h3>{{object.fecha}}</h3>
         <p>{{object.contenido}}</p>
     {%endfor%}
+     <div class="pagination">
+         {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previus_page_number }}">Anterior</a>
+         {% endif %}
 
-</body>
-</html>
+         {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">Siguiente</a>
+         {% endif %}
+     </div>
+{% endblock content %}

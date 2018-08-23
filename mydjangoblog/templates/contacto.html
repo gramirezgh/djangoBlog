@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Contacto</title>
+{% extends "base.html" %}
+{% load static %}
+
+    <title>{%block head_title %} {{ block.super }}| Contacto {% endblock head_title%}</title>
+
+{% block content%}
     <h2>Contacto</h2>
     <h3>Mail</h3>
-</head>
-<body>
+    <center><img src="{% static 'posts/img/geoproceso.jpg' %}"></center>
+{% endblock content%}
 
-</body>
-</html>
+

@@ -6,7 +6,8 @@ from .models import Post
 urlpatterns = [
     url(r'^$', ListView.as_view(
        queryset = Post.objects.all().order_by("-fecha"),
-       template_name = "lista_post.html"), name = "lista"
+       template_name = "lista_post.html",
+       paginate_by = 4), name = "lista"
     ),
 
     url(r'^(?P<id>\d+)/(?P<slug>[\w-]+)/$', DetailView.as_view(

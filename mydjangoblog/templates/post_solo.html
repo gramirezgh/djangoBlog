@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Post Solo</title>
-    <h2>Post Solo</h2>
-</head>
-<body>
+{% extends "base.html" %}
+
+
+    <title>{%block head_title %} {{ block.super }} | {{object.titulo}} {% endblock head_title%}</title>
+
+{% block content %}
     <h1>{{object.titulo}}</h1>
     <h3>{{object.fecha}}</h3>
     <p>{{object.contenido}}</p>
-</body>
-</html>
+{% endblock content %}
